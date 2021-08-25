@@ -1,0 +1,26 @@
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+<!-- <a class="homepage" href="{% url 'home'%}">Home</a> -->
+<div class="navbar">
+    <li><a href="{% url 'home'%}" style="font-size: x-large; font-style: italic;padding-left: 15%;">Cureya</a></li>
+    <li><a href="{% url 'doctorlogin'%}">Login</a></li>
+    <li><a href="{% url 'doctorregistration'%}">Register</a></li>
+    </div>
+{% if register %}
+<h1>Registration Succesfully</h1>
+{% else %}
+<div class="card">
+<h3>Registration Form</h3>
+    <form method="POST" align="center" action="{% url 'doctorregistration'%}">
+   {% csrf_token %}
+   {% for f in form %}
+   {{f}}
+   {%endfor%}
+   <br>
+    <button type="submit" class="button"> Submit</button>
+</form>
+<a href="{% url 'doctorlogin' %}" style="text-decoration:none; color:black;" >Already have an Account</a><br><br><br>
+
+</div>
+{% endif %}

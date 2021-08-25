@@ -1,0 +1,7 @@
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+<div class="navbar">
+    <li><a href="{% url 'home'%}" style="font-size: x-large; font-style: italic;padding-left: 15%;">Cureya</a></li>
+    <li><a href="{% url 'patientlogin'%}">Login</a></li>
+    <li><a href="{% url 'patientregistration'%}">Register</a></li>
+    </div>

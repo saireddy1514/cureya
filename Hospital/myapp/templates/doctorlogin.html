@@ -1,0 +1,30 @@
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+<script>
+	function spassword() {
+	if(document.getElementById('box').checked)
+	   {document.getElementById("password").type='text';}
+	else
+	document.getElementById("password").type='password';
+	}
+	 
+	</script>
+<div class="navbar">
+   <li><a href="{% url 'home'%}" style="font-size: x-large; font-style: italic;padding-left: 15%;">Cureya</a></li>
+   <li><a href="{% url 'doctorlogin'%}">Login</a></li>
+   <li><a href="{% url 'doctorregistration'%}">Register</a></li>
+   </div>
+<div class="card">
+   <h3>Login Page</h3>
+<form method="POST">
+    {% csrf_token %}
+    <input type='text' class="input" name="username" placeholder='Userid:- C1XXXXX' required>
+    <input type='password' class="input" name="password" placeholder='Password' id='password' required><br><br>
+    <input type="checkbox" id="box" onclick="spassword()">
+    <label  style="text-decoration:none; color:black;" for='box' href= 'spassword()'>Show Password</label>&nbsp; &nbsp;|&nbsp;&nbsp;
+    <a href="{% url 'doctorregistration' %}" style="text-decoration:none; color:black;" >Create an Account</a><br><br><br>
+
+    <button class='button' type="submit">Login</button>
+   </form>
+   </div>

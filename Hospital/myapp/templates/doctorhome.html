@@ -1,0 +1,12 @@
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+<a href="{% url 'home'%}" style="text-decoration: none; color: blue;">Logout</a>
+<h1>Doctor Home</h1>
+{{email}}
+<br>
+<h3>User ID:- <b>{{id}}</b></h3>
+<br>
+
+{% if verify %}
+{{status}}<a href="{% url 'phoneverify' verify %}">verify</a>
+{% endif %}

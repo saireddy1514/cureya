@@ -1,0 +1,39 @@
+{% load static%}
+<html>
+    <head>
+        <title>Cureya</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+        </style>
+    </head>
+    <body>
+    
+    <nav class="navbar">
+        <li><a href="{% url 'home'%}" style="font-size: x-large; font-style: italic;padding-left: 15%;">Cureya</a></li>        
+        <li><a href="{% url 'doctor'%}">Doctor</a></li>
+        <li><a href="{% url 'patient'%}">Patient</a></li>
+    </nav>
+    <div class="row">
+        <div class="column">
+          <div class="card1">
+            <h3>Doctor</h3>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card1">
+            <h3>Patient</h3>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+        </div>    
+
+</body>
+    
+</html>
